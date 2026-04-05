@@ -143,7 +143,7 @@ export default function ExportPage() {
       }
       
       const jsPDF = (await import('jspdf')).default
-      await import('jspdf-autotable')
+      const autoTable = (await import('jspdf-autotable')).default
       
       const doc = new (jsPDF as any)()
       
@@ -205,7 +205,7 @@ export default function ExportPage() {
         e.description || '-'
       ])
       
-      ;(doc as any).autoTable({
+      autoTable(doc, {
         startY: yPos,
         head: headers,
         body: rows,

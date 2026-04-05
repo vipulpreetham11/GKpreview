@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import StaffClient from './StaffClient'
 
+export const revalidate = 60
+
 export default async function StaffPage() {
   const supabase = await createClient()
 

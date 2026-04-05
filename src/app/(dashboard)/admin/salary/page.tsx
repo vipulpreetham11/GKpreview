@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import SalaryClient from './SalaryClient'
 
+export const revalidate = 60
+
 export default async function SalaryPage() {
   const supabase = await createClient()
 
